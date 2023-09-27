@@ -14,7 +14,8 @@ Esse repositório tem como objetivo
 
 ###  Escolha de Dataset
 
-Baixe o Dataset SteamBR [aqui](https://github.com/germanojorge/SteamBR/raw/main/steambrcorpus.zip?download=)
+Baixe o Dataset SteamBR [aqui](https://github.com/germanojorge/SteamBR/raw/main/steambrcorpus.zip?download=).
+Após o download, insira o arquivo descompactado na pasta `datasets/`.
 
 ###  Storytelling / Motivação da escolha
 
