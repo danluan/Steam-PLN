@@ -1,0 +1,52 @@
+{
+    "reviews": {
+        "111776175": {
+            "recommendationid": "111776175",
+            "author": {
+                "steamid": "76561198274286779",
+                "num_games_owned": 19,
+                "num_reviews": 3,
+                "playtime_forever": 128,
+                "playtime_last_two_weeks": 65,
+                "playtime_at_review": 78,
+                "last_played": 1647390878
+            },
+            "language": "brazilian",
+            "review": "Que jogo irritante! Em uma hora eu morri 126 fucking vezes! UHAUAHUAHUAHAUHAUAHAUHUA E \u00e9 exatamente por isso que ele \u00e9 sensacional! Te vicia e voc\u00ea quer chegar no pr\u00f3ximo checkpoint de qualquer jeito! Muitas vezes voc\u00ea morre a cent\u00edmetros do checkpoint UHAUHAUAHUAHUAHA E tem uns di\u00e1logos engra\u00e7ados/non sense. Vale a pena.",
+            "timestamp_created": 1646701060,
+            "timestamp_updated": 1646701060,
+            "voted_up": true,
+            "votes_up": 0,
+            "votes_funny": 0,
+            "weighted_vote_score": 0,
+            "comment_count": 0,
+            "steam_purchase": true,
+            "received_for_free": false,
+            "written_during_early_access": false
+        },
+        "108834430": {
+            "recommendationid": "108834430",
+            "author": {
+                "steamid": "76561198965988838",
+                "num_games_owned": 30,
+                "num_reviews": 7,
+                "playtime_forever": 136,
+                "playtime_last_two_weeks": 0,
+                "playtime_at_review": 38,
+                "last_played": 1643996520
+            },
+            "language": "brazilian",
+            "review": "jogo escondido que \u00e9 muito foda, dif\u00edcil e divertido. Pelo pre\u00e7o vale muito a pena",
+            "timestamp_created": 1643224528,
+            "timestamp_updated": 1643224528,
+            "voted_up": true,
+            "votes_up": 1,
+            "votes_funny": 0,
+            "weighted_vote_score": "0.523809552192687988",
+            "comment_count": 0,
+            "steam_purchase": true,
+            "received_for_free": false,
+            "written_during_early_access": false
+        }
+    }
+}
