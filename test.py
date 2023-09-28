@@ -22,7 +22,7 @@ def get_file_content(file_name):
                         author_item = json_reviews[review][key][author_key]
                         print(f"author_{author_key} : {author_item}")
                 else:
-                    print(f"{key} : {item}")
+                    print(f"{key} : {item} ")
 
 def get_steam_dataframe():
     for file_name in get_file_list(DIR)[5:]:
