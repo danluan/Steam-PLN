@@ -9,29 +9,38 @@ def get_file_list(dir):
     file_list = os.listdir(dir)
     return file_list
 
+def get_file_content(file_name):
+    with open(f"{file_name}") as json_file:
+        json_content = json.load(json_file)
+        json_reviews = json_content['reviews']
+        print(type(json_reviews))
+        for review in json_reviews:
+            for key in json_reviews[review]:
+                item = json_reviews[review][key]
+                if key == 'author':
+                    for author_key in json_reviews[review][key]:
+                        author_item = json_reviews[review][key][author_key]
+                        print(f"author_{author_key} : {author_item}")
+                else:
+                    print(f"{key} : {item}")
 
 def get_steam_dataframe():
-    df = pd.read_csv('teste.csv')
-
-    for file_name in get_file_list(DIR)[:1]:
-        if file_name.endswith('.json'):
+    for file_name in get_file_list(DIR)[5:]:
+        if file_name.endswith('.json') and file_name.startswith('FPS'):
+            temp = pd.read_csv('teste.csv')
             with open(f"{DIR}/{file_name}") as json_file:
                 json_content = json.load(json_file)
-                # fileJson = json.dumps(json.load(json_file)['reviews'], indent=2)
-                # print(fileJson)
-                # df = pd.DataFrame(columns=["recommendation_id", "author_steamid", "language", "review", "timestamp_created", "timestamp_updated"])
-                # file_data = pd.json_normalize(json.load(json_file).T.reset_index(drop=True))
                 file_data = pd.DataFrame.from_dict(json_content['reviews'], orient='index')
-                df = pd.read_csv('teste.csv')
-                df.head()
-                df = pd.merge(df, file_data)
+                temp = pd.concat([file_data, temp])
                 # df = pd.concat(file_data, df)
-                df.to_csv('teste.csv', index=False)
-    return df
+            temp.to_csv('teste.csv', index=False)
+            print(f"File {file_name} ")
+    pass
 
 
 print(f"{len(get_file_list(DIR))} raw files")
-get_steam_dataframe()
+get_file_content('review_sample.json')
+# get_steam_dataframe()
 
 # steam_review_list = get_steam_review_json()
 # df = pd.json_normalize(steam_review_list)
