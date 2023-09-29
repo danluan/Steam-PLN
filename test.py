@@ -5,7 +5,11 @@ import json
 
 DIR = 'datasets/reviews_cruas'
 
-def get_file_list(dir):
+def get_folders_list(dir):
+    folders_list = os.listdir(dir)
+    return folders_list
+
+def get_files(dir):
     file_list = os.listdir(dir)
     return file_list
 
@@ -38,8 +42,54 @@ def get_steam_dataframe():
     pass
 
 
-print(f"{len(get_file_list(DIR))} raw files")
-get_file_content('review_sample.json')
+
+def get_file_names_list():
+    folders_list = get_folders_list(DIR)
+    file_names_list = []
+    for folder in folders_list:
+        file_names_list.append(get_files(f"{DIR}/{folder}/"))
+        print(get_files(f"{DIR}/{folder}/"))
+    return file_names_list
+
+def main():
+    files_list = get_file_names_list()
+    for file_name in files_list:
+        if file_name.endswith('.json'):
+            with open(f"{DIR}/{folder}/{file_name}") as json_content:
+                json_data = json.loads(json_content.read())
+                json_data_frame2 = pd.DataFrame.from_dict(json_data['reviews'], orient='index')
+                   #print(json_data_frame2)
+        print(f"File {file_name} read")
+    print(f"Folder {folder} read")
+        
+
+files_list = []
+
+meta_col = [
+    "recommendationid",
+    "author_steamid",
+    "author_num_games_owned",
+    "author_num_reviews",
+    "author_playtime_forever",
+    "author_playtime_last_two_weeks",
+    "author_playtime_at_review",
+    "author_last_played",
+    "language",
+    "review",
+    "timestamp_created",
+    "timestamp_updated",
+    "voted_up",
+    "votes_up",
+    "votes_funny",
+    "weighted_vote_score",
+    "comment_count",
+    "steam_purchase",
+    "received_for_free",
+    "written_during_early_access",
+]
+
+# print(f"{len(get_file_list(DIR))} raw files")
+# get_file_content('review_sample.json')
 # get_steam_dataframe()
 
 # steam_review_list = get_steam_review_json()
