@@ -3,7 +3,6 @@ import time
 import os
 import json
 
-DIR = 'datasets/reviews_cruas'
 
 def get_folders_list(dir):
     folders_list = os.listdir(dir)
@@ -41,28 +40,6 @@ def get_steam_dataframe():
             print(f"File {file_name} ")
     pass
 
-
-
-def get_file_names_list():
-    folders_list = get_folders_list(DIR)
-    file_names_list = []
-    for folder in folders_list:
-        file_names_list.append(get_files(f"{DIR}/{folder}/"))
-        print(get_files(f"{DIR}/{folder}/"))
-    return file_names_list
-
-def main():
-    files_list = get_file_names_list()
-    for file_name in files_list:
-        if file_name.endswith('.json'):
-            with open(f"{DIR}/{folder}/{file_name}") as json_content:
-                json_data = json.loads(json_content.read())
-                json_data_frame2 = pd.DataFrame.from_dict(json_data['reviews'], orient='index')
-                   #print(json_data_frame2)
-        print(f"File {file_name} read")
-    print(f"Folder {folder} read")
-        
-
 files_list = []
 
 meta_col = [
@@ -87,6 +64,19 @@ meta_col = [
     "received_for_free",
     "written_during_early_access",
 ]
+
+def main():
+    folders_list = get_folders_list(DIR)
+    for folder in folders_list:
+        files_list = get_files(f"{DIR}/{folder}/")
+        for file_name in files_list:
+            if file_name.endswith('.json'):
+                with open(f"{DIR}/{folder}/{file_name}") as json_content:
+                    json_data = json.loads(json_content.read())
+                    json_data_frame2 = pd.DataFrame.from_dict(json_data['reviews'], orient='index')
+                    #print(json_data_frame2)
+            print(f"File {file_name} read")
+        print(f"Folder {folder} read")
 
 # print(f"{len(get_file_list(DIR))} raw files")
 # get_file_content('review_sample.json')
