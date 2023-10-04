@@ -4,12 +4,12 @@ Esse repositório tem como objetivo
 
 ## TODO:
 
-- [?] Escolha de Dataset
+- [X] Escolha de Dataset
 - [ ] Storytelling / Motivação da escolha
-- [ ] Coleta de Dados
-- [ ] Análise de Dados
+- [X] Coleta de Dados
+- [X] Análise de Dados
 - [ ] Limpeza do texto
-- [ ] Pre-processamento
+- [X] Pre-processamento
 - [ ] Extração de features
 
 ###  Escolha de Dataset
