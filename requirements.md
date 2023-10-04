@@ -19,8 +19,11 @@ O caderno deverá primar pela qualidade, incluindo:
 
 As células devem estar EXECUTADAS, com a saída registrada no caderno.
 
+
 A atividade 2 envolverá a modelagem e avaliação dos modelos, logo, será a continuidade deste trabalho. Na atividade 2, haverá a apresentação coletiva da solução integral em sala de aula em data a ser definida.
 
+
 O objetivo, ao final, é que vocês tenham executado uma pipeline integral de NLP para resolver algum dos tipos de problemas que foram apresentados em sala de aula em um dataset livremente escolhido por vocês.
+
 
 A atividade será avaliada pela qualidade técnica e esmero na construção do caderno.
